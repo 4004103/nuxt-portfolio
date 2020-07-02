@@ -8,4 +8,7 @@ $ cd nuxt-typescript-vuetify
 $ rm -rf .git
 $ rm -rf README.md
 $ cp -rf * ../nuxt-portfolio
+
+$ npm i
+$ npm run dev
 ```

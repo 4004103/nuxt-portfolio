@@ -1,109 +1,69 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-model="sideNavigationActive"
-      app
-      color="primary"
-      left
-      absolute
-      dark
-    >
-      <v-list
-        dense
-        nav
-        class="py-0"
-      >
-        <v-list-item two-line>
-          <v-list-item-avatar>
-            <img src="https://randomuser.me/api/portraits/men/81.jpg">
-          </v-list-item-avatar>
+    <div id="container">
+      <!-- 상단 헤더 시작 -->
+      <header id="header">
+        <div class="header-wrap">
+          <h1><a href="#profile">From. J</a></h1>
+          <div class="nav-bg" />
+          <div class="nav-btn" title="메뉴버튼">
+            <span />
+            <span />
+            <span />
+          </div>
+          <nav id="nav">
+            <h2 class="hidden">
+              Menu
+            </h2>
+            <ul class="navigation">
+              <li><a href="javascript:" class="menu0">Profile</a></li>
+              <li><a href="javascript:" class="menu1">Skills</a></li>
+              <li><a href="javascript:" class="menu2">Career</a></li>
+              <li><a href="javascript:" class="menu3">Portfolio</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- 상단 헤더 끝 -->
 
-          <v-list-item-content>
-            <v-list-item-title>Application</v-list-item-title>
-            <v-list-item-subtitle>Subtext</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+      <section id="container">
+        <nuxt />
+      </section>
 
-        <v-divider />
-
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-app-bar
-      app
-    >
-      <v-app-bar-nav-icon
-        @click="sideNavigationActive = !sideNavigationActive"
-      />
-      <v-toolbar-title>Page title</v-toolbar-title>
-      <!-- -->
-    </v-app-bar>
-
-    <!-- Sizes your content based upon application components -->
-    <v-content>
-      <!-- Provides the application the proper gutter -->
-      <v-container
-        fluid
-      >
-        <v-card
-          class="mx-auto"
-        >
-          <v-card-title>
-            <nuxt />
-          </v-card-title>
-        </v-card>
-        <!-- If using vue-router -->
-      </v-container>
-    </v-content>
-
-    <v-footer app>
-      <!-- -->
-    </v-footer>
-    <v-snackbar
-      v-model="countHasBeenUpdated"
-      :timeout="3000"
-      bottom
-      right
-    >
-      count has been changed
-    </v-snackbar>
+      <!-- 풋터 시작 -->
+      <footer id="footer">
+        <h2 class="hidden">
+          Contact me
+        </h2>
+        <dl class="contact-list">
+          <dt class="hidden">
+            Contact me
+          </dt>
+          <dd>
+            <a href="mailto:4004103@naver.com"><img
+              src="img/mail_w.png"
+              alt="조수아 이메일"
+              title="조수아 이메일"
+            ></a>
+          </dd>
+          <dd>
+            <a class="tel-btn" href="tel:01040041006"><img
+              src="img/call_w.png"
+              alt="조수아 휴대폰 번호"
+              title="조수아 휴대폰 번호"
+            ></a>
+          </dd>
+        </dl>
+        <a id="return-to-top" href="javascript:void(0);" style="display: inline;"><span><img src="/img/to-top.png" alt="상단으로"></span></a>
+      </footer>
+      <!-- 풋터 끝 -->
+    </div>
   </v-app>
 </template>
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
-import { Getter } from 'vuex-class'
+import { Component, Vue, } from 'vue-property-decorator';
 
-@Component({
-  data () {
-    return {
-      sideNavigationActive: true,
-      items: [
-        { title: 'Dashboard', icon: 'dashboard' },
-        { title: 'Photos', icon: 'photo' },
-        { title: 'About', icon: 'check_circle' }
-      ]
-    }
-  }
-})
+@Component({})
 export default class Home extends Vue {
-  @Getter('counter/getCount') getCount: any
-  @Watch('getCount') onCountChange (val: Number, oldVal: Number) {
-    this.countHasBeenUpdated = (val !== oldVal)
-  }
-
-  countHasBeenUpdated = false
 }
 </script>
