@@ -18,7 +18,7 @@ export default {
     loaders: {
       // we want to use sass instead of node-sass
       sass: {
-        import: ['~assets/style/app.sass','~assets/style/default.sass',],
+        import: ['~assets/style/app.sass',],
         implementation: require('sass'),
         fiber: require('fibers'),
       },
@@ -30,6 +30,10 @@ export default {
       typeCheck: false,
     },
   },
+  css: [
+    '~assets/style/default.css' ,
+  ],
+
   /** @see https://typescript.nuxtjs.org/migration.html */
   buildModules: ['@nuxt/typescript-build',],
   /** Plugins to load before mounting the App **/
