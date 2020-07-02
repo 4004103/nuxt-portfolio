@@ -10,7 +10,8 @@
     "start": "nuxt-ts start",
     "lint": "eslint --ext .ts,.js,.vue .",
     "post-update": "yarn upgrade --latest",
-    "now-build": "nuxt-ts build --spa"
+    "now-build": "nuxt-ts build --spa",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "0.3.8",
@@ -33,6 +34,7 @@
     "cypress": "3.8.3",
     "eslint": "6.8.0",
     "eslint-loader": "3.0.3",
+    "push-dir": "^0.4.1",
     "tslint-config-standard": "9.0.0"
   },
   "engines": {
