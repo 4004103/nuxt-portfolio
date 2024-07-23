@@ -4,6 +4,7 @@
       포트폴리오
     </h2>
     <section id="profile">
+      <h1 style="background-color: red;">test</h1>
       <div class="profile-box">
         <h3>Profile</h3>
         <div class="right-area" data-aos="fade-left">
